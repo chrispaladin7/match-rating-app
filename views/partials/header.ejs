@@ -8,9 +8,20 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-  <nav>
+  <!-- <nav>
     <a href="/">Home</a>
     &nbsp;|&nbsp;
     <a href="/">All Matches</a>
+  </nav> -->
+  <nav>
+    <img src="/images/camera.svg">
+    <a href="/ratings" <%- title === 'All Matches' ? 'class="active"' : '' %>>ALL MATCHES</a>
+    <% if (user) { %>
+      <a href="/ratings/new"	<%- title === 'Player Rating' ? 'class="active"' : '' %>>
+          PLAYER RATING</a>
+      <a href="/ratings/commments" <%- title === 'Review Match' ? 'class="active"' : '' %>>REVIEW A MATCH</a>
+      <a href="/logout">LOG OUT</a>
+    <% } else { %>
+      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+    <% } %>
   </nav>
-  
