@@ -4,7 +4,7 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Welcome To Match Rater' });
+  res.render('index', { title: 'Match Rater' });
 });
 
 // Google OAuth login route
@@ -23,15 +23,15 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/ratings',
-    failureRedirect: '/ratings'
+    successRedirect: '/matches',
+    failureRedirect: '/matches'
   }
 ));
 
 // OAuth logout route
 router.get('/logout', function(req, res){
   req.logout(function() {
-    res.redirect('/ratings');
+    res.redirect('/');
   });
 });
 

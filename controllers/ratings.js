@@ -6,5 +6,5 @@ module.exports = {
 
 
 async function index(req, res) {
-    res.render('ratings/index', { title : 'All Matches' })
+    res.render('ratings/index', { title : 'Player Rating' })
 }
