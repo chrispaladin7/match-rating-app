@@ -18,7 +18,7 @@ const data = require('./data');
 
     results = await Promise.all([
         Match.create(data.match),
-        Team.create(data.team)
+        Team.create(data.teams)
     ]);
     console.log('Created matchees:', results[0]);
     console.log('Created teams:', results[1]);

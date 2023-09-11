@@ -47,15 +47,7 @@ exports.players = [
 ];
 
 exports.match = [
-    // {
-    //     matchTitle: 'CHEvARS', homeTeam: 'Chelsea', awayTeam: 'Arsenal', homeScore: 5, awayScore: 0, date: '12-12-2023', time: '16:30', stadium: 'Stamford Bridge', competition: 'English Premier League',
-    //     homeTeamStarters: [{ homePlayer1: '', homePlayer2: '', homePlayer3: '', homePlayer4: '', homePlayer4: '', homePlayer5: '', homePlayer7: '', homePlayer8: '', homePlayer9: '', homePlayer10: '', homePlayer11: '' }],
-    //     awayTeamStarters: [{ awayPlayer1: '', awayPlayer2: '', awayPlayer3: '', awayPlayer4: '', awayPlayer4: '', awayPlayer5: '', awayPlayer7: '', awayPlayer8: '', awayPlayer9: '', awayPlayer10: '', awayPlayer11: '' }],
-    //     homeTeamSubs: [{ homeSubPlayer1: '', homeSubPlayer2: '', homeSubPlayer3: '', homeSubPlayer4: '', homeSubPlayer5: '', homeSubPlayer6: '' }],
-    //     awayTeamSubs: [{ awaySubPlayer1: '', awaySubPlayer2: '', awaySubPlayer3: '', awaySubPlayer4: '', awaySubPlayer5: '', awaySubPlayer6: '' }],
-    //     ratings: [{ player: '', rating: 9 }],
-    //     comments: [{ content: 'Chelsea is the best!!!',motm:'' }]
-    // }
+  
     {
         matchTitle: 'CHEvARS', homeTeam: 'Chelsea', awayTeam: 'Arsenal', homeScore: 5, awayScore: 0, date: '12-12-2023', time: '16:30', stadium: 'Stamford Bridge', competition: 'English Premier League',
         homeTeamStarters: [{}],
@@ -68,6 +60,10 @@ exports.match = [
 ];
 
 exports.teams = [
-    { name: 'Arsenal', abbreviation: 'ARS', nameOfCoach: 'Mikel Arteta', Stadium: 'Emirates Stadium', logo: 'https://s.hs-data.com/bilder/wappen/mittel/555.gif?fallback=png' },
-    { name: 'Chelsea', abbreviation: 'CHE', nameOfCoach: '	Mauricio Pochettino', Stadium: 'Stamford Bridge', logo: 'https://s.hs-data.com/bilder/wappen/mittel/544.gif?fallback=png' },
+    { name: 'Arsenal', abbreviation: 'ARS', nameOfCoach: 'Mikel Arteta', stadium: 'Emirates Stadium',league:'English Premier League', logo: 'https://s.hs-data.com/bilder/wappen/mittel/555.gif?fallback=png' },
+    { name: 'Chelsea', abbreviation: 'CHE', nameOfCoach: 'Mauricio Pochettino', stadium: 'Stamford Bridge',league:'English Premier League', logo: 'https://s.hs-data.com/bilder/wappen/mittel/544.gif?fallback=png'},
+    { name: 'Liverpool', abbreviation: 'LIV', nameOfCoach: 'Jürgen Klopp', stadium: 'Anfield',league:'English Premier League', logo: 'https://s.hs-data.com/bilder/wappen/mittel/550.gif?fallback=png'},
+    { name: 'Manchester United', abbreviation: 'MUN', nameOfCoach: 'Erik ten Hag', stadium: 'Old Trafford',league:'English Premier League', logo: 'https://s.hs-data.com/bilder/wappen/mittel/543.gif?fallback=png'},
+    { name: 'Real Madrid', abbreviation: 'RMD', nameOfCoach: 'Carlo Ancelotti', stadium: 'Santiago Bernabéu',league:'La Liga', logo: 'https://s.hs-data.com/bilder/wappen/mittel/532.gif?fallback=png'},
+    { name: 'FC Barcelona', abbreviation: 'FCB', nameOfCoach: 'Xavi', stadium: 'Spotify Camp Nou',league:'La Liga', logo: 'https://s.hs-data.com/bilder/wappen/mittel/530.gif?fallback=png'},
 ]

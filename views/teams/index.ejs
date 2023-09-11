@@ -1,0 +1,43 @@
+<%- include('../partials/header') %>
+
+    <h1>View All Teams</h1>
+    <table id="list">
+        <thead>
+            <tr>
+                <th>Logo</th>
+                <th>Team Name</th>
+                <th>abbreviation</th>
+                <th>Man Of Coach</th>
+                <th>Stadium Name</th>
+                <th>League</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% teams.forEach(function(t){ %>
+                <tr>
+                    <td><img src="<%= t.logo %>" alt=""></td>
+                    <td>
+                        <%= t.name %>
+                    </td>
+                    <td>
+                        <%= t.abbreviation %>
+                    </td>
+                    <td>
+                        <%= t.nameOfCoach %>
+                    </td>
+                    <td>
+                        <%= t.stadium %>
+                    </td>
+                    <td>
+                        <%= t.league %>
+                    </td>
+                    <td>
+                        <a href="teams/<%= t._id %>">click for more</a>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+
+    <%- include('../partials/footer') %>

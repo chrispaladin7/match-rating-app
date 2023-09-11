@@ -1,4 +1,4 @@
-const Rating = require('../models/rating');
+const Rating = require('../models/team');
 
 module.exports = {
     index

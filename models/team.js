@@ -4,10 +4,13 @@ const Schema = mongoose.Schema;
 
 const teamsSchema = new Schema({
     name:String,
-    abbrivivation:String,
+    abbreviation:String,
     nameOfCoach:String,
-    Stadium:String,
+    stadium:String,
+    league:String,
     logo:String
+}, {
+    timestamps: true
 });
 
 
