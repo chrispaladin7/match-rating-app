@@ -5,6 +5,10 @@ module.exports = {
 };
 
 
+
 async function index(req, res) {
-    res.render('matches/index', { title : 'All Matches' })
+    const matches = await Match.find({})
+        .populate('homeTeam')
+        .populate('awayTeam')
+    res.render('matches/index', { title : 'All Matches', matches});
 }

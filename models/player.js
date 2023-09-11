@@ -12,7 +12,7 @@ const playerSchema = new Schema({
         type: String,
         enum: ['GK', 'DF', 'MF', 'FW']
     },
-    isStater: Boolean
+    isStarter: Boolean
 }, {
     timestamps: true
 });

@@ -1,5 +1,9 @@
 <%- include('../partials/header')  %>
 
 <h1>View All Matches</h1>
+<% matches.forEach(function (m) { %>
+    <h5><%= m.matchTitle %></h5>
+    <p><%= m.homeTeam.name %> (<%= m.homeTeam.abbreviation %>)</p>
+<% }) %>
 
 <%- include('../partials/footer')  %>

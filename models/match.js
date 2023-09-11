@@ -8,6 +8,19 @@ const commentsSchema = new Schema({
     timestamps: true
 });
 
+const playerSchema = new Schema({
+    playerName: String,
+    playerNum: Number,
+    team: {
+        type: Schema.Types.ObjectId,
+        ref: 'Teams'
+    },
+    position: {
+        type: String,
+        enum: ['GK', 'DF', 'MF', 'FW']
+    },
+    isStarter: Boolean
+});
 
 const matchSchema = new Schema({
     // matchTitle is the concatenation of home team
@@ -35,13 +48,16 @@ const matchSchema = new Schema({
         max: 20
     },
     date: Date,
-    time: String,
     stadium: String,
     competition: {
         type: String,
         enum: ['La Liga', 'English Premier League']
     },
-    comments: [commentsSchema]
+    comments: [commentsSchema],
+    homeStarters:[playerSchema],
+    homeSubs:[playerSchema],
+    awayStarters:[playerSchema],
+    awaySubs:[playerSchema],
 }, {
     timestamps: true
 });
