@@ -1,13 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ratingsSchema = new Schema({
-    player: String,
-    rating: Number,
-}, {
-    timestamps: true
-});
-
 const commentsSchema = new Schema({
     content: String,
     motm: String
