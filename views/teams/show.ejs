@@ -1,9 +1,37 @@
 <%- include('../partials/header') %>
 
-    <h1>View All Teams</h1>
-
-
-
-
+    <h1>
+        <%= title %>
+    </h1>
+    <table id="list">
+        <thead>
+            <tr>
+                <th>Team Name</th>
+                <th>abbreviation</th>
+                <th>Man Of Coach</th>
+                <th>Stadium Name</th>
+                <th>League</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <%= teams.name %>
+                </td>
+                <td>
+                    <%= teams.abbreviation %>
+                </td>
+                <td>
+                    <%= teams.nameOfCoach %>
+                </td>
+                <td>
+                    <%= teams.stadium %>
+                </td>
+                <td>
+                    <%= teams.league %>
+                </td>
+        </tbody>
+    </table>
 
     <%- include('../partials/footer') %>

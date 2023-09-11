@@ -7,11 +7,11 @@ module.exports = {
 
 
 async function index(req, res) {
-    const teams= await Team.find({});
-    res.render('teams/index', { title : 'All Teams' ,teams})
+    const teams = await Team.find({});
+    res.render('teams/index', { title: 'All Teams', teams })
 }
 
-async function show(req,res){
-    const teams=await Team.findById(req.params.id);
-    res.render('teams/:id', { title : `${teams.name} Details`,teams})
+async function show(req, res) {
+    const teams = await Team.findById(req.params.id);
+    res.render('teams/show', { title: `${teams.name} Details`, teams })
 }

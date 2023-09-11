@@ -3,12 +3,15 @@ const Schema = mongoose.Schema;
 
 const playerSchema = new Schema({
     playerName: String,
-    playerNum: Number, 
-    teamName: String, 
-    position:   {
-        type:String,
-        enum:['GK','DF','MF','FW']
-    }, 
+    playerNum: Number,
+    team: {
+        type: Schema.Types.ObjectId,
+        ref: 'Team'
+    },
+    position: {
+        type: String,
+        enum: ['GK', 'DF', 'MF', 'FW']
+    },
 }, {
     timestamps: true
 });
