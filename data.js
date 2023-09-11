@@ -46,18 +46,18 @@
 
 // ];
 
-exports.match = [
+// exports.match = [
   
-    {
-        matchTitle: 'CHEvARS', homeTeam: 'Chelsea', awayTeam: 'Arsenal', homeScore: 5, awayScore: 0, date: '12-12-2023', time: '16:30', stadium: 'Stamford Bridge', competition: 'English Premier League',
-        homeTeamStarters: [{}],
-        awayTeamStarters: [{}],
-        homeTeamSubs: [{}],
-        awayTeamSubs: [{}],
-        ratings: [{ player: '', rating: 9 }],
-        comments: [{ content: 'Chelsea is the best!!!',motm:'' }]
-    }
-];
+//     {
+//         matchTitle: 'CHEvARS', homeTeam: 'Chelsea', awayTeam: 'Arsenal', homeScore: 5, awayScore: 0, date: '12-12-2023', time: '16:30', stadium: 'Stamford Bridge', competition: 'English Premier League',
+//         homeTeamStarters: [{}],
+//         awayTeamStarters: [{}],
+//         homeTeamSubs: [{}],
+//         awayTeamSubs: [{}],
+//         ratings: [{ player: '', rating: 9 }],
+//         comments: [{ content: 'Chelsea is the best!!!',motm:'' }]
+//     }
+// ];
 
 exports.teams = [
     { name: 'Arsenal', abbreviation: 'ARS', nameOfCoach: 'Mikel Arteta', stadium: 'Emirates Stadium',league:'English Premier League', logo: 'https://s.hs-data.com/bilder/wappen/mittel/555.gif?fallback=png' },

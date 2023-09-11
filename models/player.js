@@ -6,12 +6,13 @@ const playerSchema = new Schema({
     playerNum: Number,
     team: {
         type: Schema.Types.ObjectId,
-        ref: 'Team'
+        ref: 'Teams'
     },
     position: {
         type: String,
         enum: ['GK', 'DF', 'MF', 'FW']
     },
+    isStater: Boolean
 }, {
     timestamps: true
 });

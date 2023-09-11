@@ -8,53 +8,39 @@ const commentsSchema = new Schema({
     timestamps: true
 });
 
-const staterSchema = new Schema({
-    player1: String,
-    player2: String,
-    player3: String,
-    player4: String,
-    player5: String,
-    player6: String,
-    player7: String,
-    player8: String,
-    player9: String,
-    player10: String,
-    player11: String,
-}, {
-    timestamps: true
-});
-
-const subsSchema = new Schema({
-    subPlayer1: String,
-    subPlayer2: String,
-    subPlayer3: String,
-    subPlayer4: String,
-    subPlayer5: String,
-    subPlayer6: String,
-    subPlayer7: String,
-}, {
-    timestamps: true
-});
-
-
 
 const matchSchema = new Schema({
     // matchTitle is the concatenation of home team
     // and away team abbeviation
-    matchTitle: String,
-    homeTeam: String,
-    awayTeam: String,
-    homeScore: Number,
-    awayScore: Number,
+    matchTitle: {
+        type: String,
+        validate:/^[a-zA-Z]{3}v[a-zA-Z]{3}$/
+    },
+    homeTeam: {
+        type: Schema.Types.ObjectId,
+        ref: 'Teams'
+    },
+    awayTeam:{
+        type: Schema.Types.ObjectId,
+        ref: 'Teams'
+    },
+    homeScore: {
+        type: Number,
+        min: 0,
+        max: 20
+    },
+    awayScore: {
+        type: Number,
+        min: 0,
+        max: 20
+    },
     date: Date,
     time: String,
     stadium: String,
-    competition: String,
-    homeTeamStarters: [staterSchema],
-    awayTeamStarters: [staterSchema],
-    homeTeamSubs: [subsSchema],
-    awayTeamSubs: [subsSchema],
-    matchRating: [ratingsSchema],
+    competition: {
+        type: String,
+        enum: ['La Liga', 'English Premier League']
+    },
     comments: [commentsSchema]
 }, {
     timestamps: true
