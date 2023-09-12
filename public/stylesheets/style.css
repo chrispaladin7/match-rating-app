@@ -192,6 +192,7 @@ hr {
 .review-user img {
   border-radius: 50%;
   height: 40px;
+
 }
 
 ul {
@@ -201,4 +202,15 @@ ul {
 li {
   text-align: justify;
   text-decoration: none;
+}
+
+.review-textarea{
+  color: #424748;
+  font-size: medium;
+  text-align: center;
+  border-radius: 5px;
+}
+
+input{
+  color: #424748;
 }

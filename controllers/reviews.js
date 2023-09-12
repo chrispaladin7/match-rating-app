@@ -23,7 +23,7 @@ async function create(req,res){
 }
 
 async function deleteReviews(req,res){
-    const match = await Match.findOne({'reviews._id': req.params.id, 'reviews.user' : req.params.id});
+    const match = await Match.findOne({'reviews._id': req.params.id, 'reviews.user' : req.user.id});
     // Guard for unauthorized Users
     if(!match) return res.redirect('/matches');
     // Remove the review using Id 

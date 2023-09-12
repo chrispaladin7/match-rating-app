@@ -90,7 +90,7 @@
         <h2>Include your take on the Match below</h2>
         <form id="add-review-form" method="POST" action="/matches/<%= matches._id %>/reviews">
             <label>Review:</label>
-            <textarea name="content"></textarea>
+            <textarea class="review-textarea" name="content"></textarea>
             <input type="submit" value="Add Review">
         </form>
     </section>
@@ -119,14 +119,17 @@
                             <%= r.createdAt.toLocaleTimeString() %>
                         </td>
                         <td>
+                            <textarea class="review-textarea" name="textarea" cols="15" rows="5">
                             <%= r.content %>
+                            </textarea>
                         </td>
                         <td>
                             <% if (user?._id.equals(r.user)) { %>
-                              <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                                <button type="submit">X</button>
-                              </form>
-                            <% } %>
+                                <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                                    <button type="submit">X</button>
+                                </form>
+                                <button class="toggle-button">Toggle Textarea</button> 
+                                <% } %>
                         </td>
                     </tr>
                     <% }); %>
