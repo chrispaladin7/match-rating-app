@@ -4,13 +4,14 @@ const Schema = mongoose.Schema;
 const reviewsSchema = new Schema({
     content: String,
     motm: String,
-    // user: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'User',
-    //     required: true
-    // },
-    // userName: String,
-    // userAvatar: String
+    //  Links OAuth to reviews
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    userName: String,
+    userAvatar: String
 }, {
     timestamps: true
 });
