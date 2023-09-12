@@ -1,9 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const commentsSchema = new Schema({
+const reviewsSchema = new Schema({
     content: String,
-    motm: String
+    motm: String,
+    // user: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'User',
+    //     required: true
+    // },
+    // userName: String,
+    // userAvatar: String
 }, {
     timestamps: true
 });
@@ -27,13 +34,13 @@ const matchSchema = new Schema({
     // and away team abbeviation
     matchTitle: {
         type: String,
-        validate:/^[a-zA-Z]{3}v[a-zA-Z]{3}$/
+        validate: /^[a-zA-Z]{3}v[a-zA-Z]{3}$/
     },
     homeTeam: {
         type: Schema.Types.ObjectId,
         ref: 'Teams'
     },
-    awayTeam:{
+    awayTeam: {
         type: Schema.Types.ObjectId,
         ref: 'Teams'
     },
@@ -53,11 +60,11 @@ const matchSchema = new Schema({
         type: String,
         enum: ['La Liga', 'English Premier League']
     },
-    comments: [commentsSchema],
-    homeStarters:[playerSchema],
-    homeSubs:[playerSchema],
-    awayStarters:[playerSchema],
-    awaySubs:[playerSchema],
+    reviews: [reviewsSchema],
+    homeStarters: [playerSchema],
+    homeSubs: [playerSchema],
+    awayStarters: [playerSchema],
+    awaySubs: [playerSchema],
 }, {
     timestamps: true
 });

@@ -8,7 +8,6 @@ const teamsSchema = new Schema({
     stadium: String,
     league: String,
     logo: String
-    
 }, {
     timestamps: true
 });

@@ -189,3 +189,12 @@ hr {
   border-radius: 50%;
   height: 40px;
 }
+
+ul {
+  list-style-type: none;
+}
+
+li{
+  text-align: justify;
+  text-decoration: none;
+}

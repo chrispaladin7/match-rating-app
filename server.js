@@ -16,6 +16,7 @@ var indexRouter = require('./routes/index');
 var matchesRouter = require('./routes/matches');
 var ratingsRouter = require('./routes/ratings');
 var teamsRouter = require('./routes/teams');
+var reviewsRouter = require('./routes/reviews');
 
 var app = express();
 
@@ -48,14 +49,15 @@ app.use('/', indexRouter);
 app.use('/matches', matchesRouter);
 app.use('/teams', teamsRouter);
 app.use('/ratings', ratingsRouter);
+app.use('/', reviewsRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

@@ -1,9 +1,49 @@
-<%- include('../partials/header')  %>
+<%- include('../partials/header') %>
 
-<h1>View All Matches</h1>
-<% matches.forEach(function (m) { %>
-    <h5><%= m.matchTitle %></h5>
-    <p><%= m.homeTeam.name %> (<%= m.homeTeam.abbreviation %>)</p>
-<% }) %>
+    <h1>View All Matches</h1>
 
-<%- include('../partials/footer')  %>
+    <table id="list">
+        <% matches.forEach(function (m) { %>
+            <thead>
+                <tr>
+                    <th>Match</th>
+                    <th>Home Name</th>
+                    <th>Away Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Stadium</th>
+                    <th>Competition</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td>
+                    <strong><%= m.homeScore %></strong>  <small><%= m.matchTitle %></small>  <strong><%= m.awayScore %></strong>
+                </td>
+                <td>
+                    <%= m.homeTeam.name %> (<%= m.homeTeam.abbreviation %>)  
+                </td>
+                <td>
+                    <%= m.awayTeam.name %> (<%= m.awayTeam.abbreviation %>)  
+                </td>
+                <td>
+                    <%= m.date.toLocaleDateString() %>
+                </td>
+                <td>
+                    <%= m.date.toLocaleTimeString() %>
+                </td>
+                <td>
+                    <%= m.stadium %>
+                </td>
+                <td>
+                    <%= m.competition %>
+                </td>
+                <td>
+                    <a href="matches/<%= m._id %>">click for more</a>
+                </td>
+                <% }) %>
+            </tbody>
+    </table>
+
+
+
+    <%- include('../partials/footer') %>

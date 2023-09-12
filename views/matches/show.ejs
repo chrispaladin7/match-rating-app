@@ -1,0 +1,125 @@
+<%- include('../partials/header') %>
+
+    <h1>
+        <%= title %>
+    </h1>
+
+    <table id="list">
+        <thead>
+            <tr>
+                <th>Match</th>
+                <th>Home Name</th>
+                <th>Away Name</th>
+                <th>Score</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Stadium</th>
+                <th>Competition</th>
+            </tr>
+        </thead>
+        <tbody>
+            <td>
+                <%= matches.matchTitle %>
+            </td>
+            <td>
+                <%= matches.homeTeam.name %> (<%= matches.homeTeam.abbreviation %>)
+            </td>
+            <td>
+                <%= matches.awayTeam.name %> (<%= matches.awayTeam.abbreviation %>)
+            </td>
+            <td>
+                <%= matches.homeScore %> - <%= matches.awayScore %>
+            </td>
+            <td>
+                <%= matches.date.toLocaleDateString() %>
+            </td>
+            <td>
+                <%= matches.date.toLocaleTimeString() %>
+            </td>
+            <td>
+                <%= matches.stadium %>
+            </td>
+            <td>
+                <%= matches.competition %>
+            </td>
+        </tbody>
+    </table>
+
+    <table id="list">
+        <thead>
+            <tr>
+                <th>Home Starters</th>
+                <th>Away Starters</th>
+                <th>Home Substitutes</th>
+                <th>Away Substitutes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <td>
+                <ul>
+                    <%- matches.homeStarters.map(p=>
+                        `<li>${p.position} : ${p.playerNum} ${p.playerName}</li>`
+                        ).sort().join('') %>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <%- matches.awayStarters.map(a=>
+                        `<li>${a.position} : ${a.playerNum} ${a.playerName}</li>`
+                        ).sort().join('') %>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <%- matches.homeSubs.map(p=>
+                        `<li>${p.position} : ${p.playerNum} ${p.playerName}</li>`
+                        ).sort().join('') %>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <%- matches.awaySubs.map(a=>
+                        `<li>${a.position} : ${a.playerNum} ${a.playerName}</li>`
+                        ).sort().join('') %>
+                </ul>
+            </td>
+        </tbody>
+    </table>
+
+    <section>
+        <h2>Include your take on the Match below</h2>
+        <form id="add-review-form" method="POST" action="/matches/<%= matches._id %>/reviews">
+            <label>Review:</label>
+            <textarea name="content"></textarea>
+            <input type="submit" value="Add Review">
+        </form>
+    </section>
+
+    <% if (matches.reviews.length) { %>
+        <table>
+          <thead>
+            <tr>
+              <!-- <th>User</th> -->
+              <th>Date</th>
+              <th>Review</th>
+            </tr>
+          </thead>
+          <tbody>
+              <% matches.reviews.forEach(function(r) { %>
+                  <tr>
+                    <td>
+                      <%= r.createdAt.toLocaleDateString() %>
+                    </td>
+                    <td>
+                      <%= r.content %>
+                    </td>
+                  </tr>
+                  <% }); %>
+          </tbody>
+        </table>
+        <% } else { %>
+          <h5>No Reviews Yet</h5>
+          <% } %>
+
+
+    <%- include('../partials/footer') %>

@@ -14,6 +14,8 @@ const data = require('./data');
 (async function () {
     await Match.deleteMany({});
     await Team.deleteMany({});
+    await Player.deleteMany({});
+
 
     const teams = await Team.create(data.teams);
 
@@ -27,16 +29,16 @@ const data = require('./data');
         { team: teams[0], playerName: 'Bukayo Saka', playerNum: 7, position: 'FW', isStarter: true },
         { team: teams[0], playerName: 'Martin Ødegaard', playerNum: 8, position: 'MF', isStarter: true },
         { team: teams[0], playerName: 'Gabriel Jesus', playerNum: 9, position: 'FW', isStarter: true },
-        { team: teams[0], playerName: 'Emile Smith Rowe', playerNum: 10, position: 'MF', isStarter: true },
+        { team: teams[0], playerName: 'Emile Smith Rowe', playerNum: 10, position: 'MF', isStarter: false },
         { team: teams[0], playerName: 'Gabriel Martinelli', playerNum: 11, position: 'FW', isStarter: true },
         { team: teams[0], playerName: 'Jurriën Timber', playerNum: 12, position: 'DF', isStarter: true },
-        { team: teams[0], playerName: 'Eddie Nketiah', playerNum: 14, position: 'FW', isStarter: true },
-        { team: teams[0], playerName: 'Takehiro Tomiyasu', playerNum: 18, position: 'DF', isStarter: true },
-        { team: teams[0], playerName: 'Leandro Trossard', playerNum: 19, position: 'FW', isStarter: true },
-        { team: teams[0], playerName: 'Jorginho', playerNum: 20, position: 'MF', isStarter: true },
-        { team: teams[0], playerName: 'Fábio Vieira', playerNum: 21, position: 'MF', isStarter: true },
-        { team: teams[0], playerName: 'David Raya', playerNum: 22, position: 'GK', isStarter: true },
-        { team: teams[0], playerName: 'Kai Havertz', playerNum: 23, position: 'MF', isStarter: true },
+        { team: teams[0], playerName: 'Eddie Nketiah', playerNum: 14, position: 'FW', isStarter: false },
+        { team: teams[0], playerName: 'Takehiro Tomiyasu', playerNum: 18, position: 'DF', isStarter: false },
+        { team: teams[0], playerName: 'Leandro Trossard', playerNum: 19, position: 'FW', isStarter: false },
+        { team: teams[0], playerName: 'Jorginho', playerNum: 20, position: 'MF', isStarter: false },
+        { team: teams[0], playerName: 'Fábio Vieira', playerNum: 21, position: 'MF', isStarter: false },
+        { team: teams[0], playerName: 'David Raya', playerNum: 22, position: 'GK', isStarter: false },
+        { team: teams[0], playerName: 'Kai Havertz', playerNum: 23, position: 'MF', isStarter: false },
         { team: teams[0], playerName: 'Declan Rice', playerNum: 41, position: 'MF', isStarter: true },
     
         //Chelsea Team
@@ -57,7 +59,7 @@ const data = require('./data');
         { team: teams[1], playerName: 'Cole Palmer', playerNum: 20, position: 'FW', isStarter: false },
         { team: teams[1], playerName: 'Ben Chilwell', playerNum: 21, position: 'DF', isStarter: true },
         { team: teams[1], playerName: 'Conor Gallagher', playerNum: 23, position: 'MF', isStarter: false },
-        { team: teams[1], playerName: 'Ben Chilwell', playerNum: 24, position: 'DF', isStarter: true },
+        { team: teams[1], playerName: 'Reece James', playerNum: 24, position: 'DF', isStarter: true },
         { team: teams[1], playerName: 'Moisés Caicedo', playerNum: 25, position: 'MF', isStarter: true },
         { team: teams[1], playerName: 'Levi Colwill', playerNum: 26, position: 'DF', isStarter: true },
         { team: teams[1], playerName: 'Malo Gusto', playerNum: 27, position: 'DF', isStarter: false },
@@ -93,6 +95,8 @@ const data = require('./data');
     console.log('Created teams:', teams);
     console.log('Created home players:', matches[0].homeStarters);
     console.log('Created home subs:', matches[0].homeSubs);
+    console.log('Created away players:', matches[0].awayStarters);
+    console.log('Created away subs:', matches[0].awaySubs);
 
     process.exit();
 })();
