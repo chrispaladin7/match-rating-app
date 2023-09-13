@@ -225,3 +225,8 @@ button{
 input{
   color: #424748;
 }
+
+form{
+  align-content: center;
+  align-items: center;
+}

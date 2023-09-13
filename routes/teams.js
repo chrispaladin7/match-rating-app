@@ -8,6 +8,6 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/', teamsCtrl.index);
 
 //GET /teams/:id
-router.get('/:id',teamsCtrl.show);
+router.get('/:id',ensureLoggedIn,teamsCtrl.show);
 
 module.exports = router;
