@@ -211,6 +211,17 @@ li {
   border-radius: 5px;
 }
 
+.review-textarea-update{
+  color: #424748;
+  font-size: medium;
+  text-align: center;
+  border-radius: 5px;
+}
+
+button{
+  color: black;
+}
+
 input{
   color: #424748;
 }

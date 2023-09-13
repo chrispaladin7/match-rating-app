@@ -119,7 +119,7 @@
                             <%= r.createdAt.toLocaleTimeString() %>
                         </td>
                         <td>
-                            <textarea class="review-textarea" name="textarea" cols="15" rows="5">
+                            <textarea class="review-textarea-update" name="textarea" cols="15" rows="5" disabled="true">
                             <%= r.content %>
                             </textarea>
                         </td>
@@ -128,7 +128,8 @@
                                 <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
                                     <button type="submit">X</button>
                                 </form>
-                                <button class="toggle-button">Toggle Textarea</button> 
+                                <button class="toggle-button">Toggle Textarea</button>
+                                <input  type="submit" value="UPDATE" class="update-review-button">
                                 <% } %>
                         </td>
                     </tr>
@@ -138,6 +139,26 @@
         <% } else { %>
             <h5>No Reviews Yet</h5>
             <% } %>
+
+            <script>
+                // Get references to the button and textareas
+                const toggleButton = document.querySelector('.toggle-button');
+                const reviewTextarea = document.querySelector('.review-textarea-update');
+                const updateButton = document.querySelector('.update-review-button');
+            
+                // Initialize the updateButton to be hidden
+                updateButton.style.visibility = 'hidden';
+            
+                // Add a click event listener to the button
+                toggleButton.addEventListener('click', () => {
+                    // Toggle the disabled attribute of the reviewTextarea
+                    reviewTextarea.disabled = !reviewTextarea.disabled;
+            
+                    // Toggle the visibility of the updateButton
+                    updateButton.style.visibility = reviewTextarea.disabled ? 'hidden' : 'visible';
+                });
+            </script>
+            
 
 
                 <%- include('../partials/footer') %>

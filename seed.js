@@ -66,6 +66,57 @@ const data = require('./data');
         { team: teams[1], playerName: 'Đorđe Petrović', playerNum: 28, position: 'GK', isStarter: false },
         { team: teams[1], playerName: 'Ian Maatsen', playerNum: 29, position: 'DF', isStarter: false },
         { team: teams[1], playerName: 'Wesley Fofana', playerNum: 33, position: 'DF', isStarter: false },
+
+        //Manchester United Team
+        { team: teams[2], playerName: 'Altay Bayındır', playerNum: 1, position: 'GK', isStarter: false },
+        { team: teams[2], playerName: 'Victor Lindelöf', playerNum: 2, position: 'DF', isStarter: false },
+        { team: teams[2], playerName: 'Sofyan Amrabat', playerNum: 4, position: 'MF', isStarter: false },
+        { team: teams[2], playerName: 'Harry Maguire', playerNum: 5, position: 'DF', isStarter: false },
+        { team: teams[2], playerName: 'Lisandro Martínez', playerNum: 6, position: 'DF', isStarter: true },
+        { team: teams[2], playerName: 'Mason Mount', playerNum: 7, position: 'MF', isStarter: true },
+        { team: teams[2], playerName: 'Bruno Fernandes', playerNum: 8, position: 'MF', isStarter: true },
+        { team: teams[2], playerName: 'Marcus Rashford', playerNum: 10, position: 'FW', isStarter: true },
+        { team: teams[2], playerName: 'Rasmus Højlund', playerNum: 11, position: 'FW', isStarter: true },
+        { team: teams[2], playerName: 'Tyrell Malacia', playerNum: 12, position: 'DF', isStarter: false },
+        { team: teams[2], playerName: 'Christian Eriksen', playerNum: 14, position: 'MF', isStarter: false },
+        { team: teams[2], playerName: 'Reguilón', playerNum: 15, position: 'DF', isStarter: false },
+        { team: teams[2], playerName: 'Amad', playerNum: 16, position: 'FW', isStarter: false },
+        { team: teams[2], playerName: 'Alejandro Garnacho', playerNum: 17, position: 'FW', isStarter: false },
+        { team: teams[2], playerName: 'Casemiro', playerNum: 18, position: 'MF', isStarter: true },
+        { team: teams[2], playerName: 'Raphaël Varane', playerNum: 19, position: 'DF', isStarter: true },
+        { team: teams[2], playerName: 'Diogo Dalot', playerNum: 20, position: 'DF', isStarter: false },
+        { team: teams[2], playerName: 'Antony', playerNum: 21, position: 'MF', isStarter: true },
+        { team: teams[2], playerName: 'Tom Heaton', playerNum: 22, position: 'GK', isStarter: false },
+        { team: teams[2], playerName: 'Luke Shaw', playerNum: 23, position: 'DF', isStarter: true },
+        { team: teams[2], playerName: 'André Onana', playerNum: 24, position: 'GK', isStarter: true },
+        { team: teams[2], playerName: 'Jadon Sancho', playerNum: 25, position: 'FW', isStarter: false },
+        { team: teams[2], playerName: 'Aaron Wan-Bissaka', playerNum: 29, position: 'DF', isStarter: true },
+
+        //Liverpool Team
+        { team: teams[3], playerName: 'Altay Bayındır', playerNum: 1, position: 'GK', isStarter: false },
+        { team: teams[3], playerName: 'Victor Lindelöf', playerNum: 2, position: 'DF', isStarter: false },
+        { team: teams[3], playerName: 'Sofyan Amrabat', playerNum: 4, position: 'MF', isStarter: false },
+        { team: teams[3], playerName: 'Harry Maguire', playerNum: 5, position: 'DF', isStarter: false },
+        { team: teams[3], playerName: 'Lisandro Martínez', playerNum: 6, position: 'DF', isStarter: true },
+        { team: teams[3], playerName: 'Mason Mount', playerNum: 7, position: 'MF', isStarter: true },
+        { team: teams[3], playerName: 'Bruno Fernandes', playerNum: 8, position: 'MF', isStarter: true },
+        { team: teams[3], playerName: 'Marcus Rashford', playerNum: 10, position: 'FW', isStarter: true },
+        { team: teams[3], playerName: 'Rasmus Højlund', playerNum: 11, position: 'FW', isStarter: true },
+        { team: teams[3], playerName: 'Tyrell Malacia', playerNum: 12, position: 'DF', isStarter: false },
+        { team: teams[3], playerName: 'Christian Eriksen', playerNum: 14, position: 'MF', isStarter: false },
+        { team: teams[3], playerName: 'Reguilón', playerNum: 15, position: 'DF', isStarter: false },
+        { team: teams[3], playerName: 'Amad', playerNum: 16, position: 'FW', isStarter: false },
+        { team: teams[3], playerName: 'Alejandro Garnacho', playerNum: 17, position: 'FW', isStarter: false },
+        { team: teams[3], playerName: 'Casemiro', playerNum: 18, position: 'MF', isStarter: true },
+        { team: teams[3], playerName: 'Raphaël Varane', playerNum: 19, position: 'DF', isStarter: true },
+        { team: teams[3], playerName: 'Diogo Dalot', playerNum: 20, position: 'DF', isStarter: false },
+        { team: teams[3], playerName: 'Antony', playerNum: 21, position: 'MF', isStarter: true },
+        { team: teams[3], playerName: 'Tom Heaton', playerNum: 22, position: 'GK', isStarter: false },
+        { team: teams[3], playerName: 'Luke Shaw', playerNum: 23, position: 'DF', isStarter: true },
+        { team: teams[3], playerName: 'André Onana', playerNum: 24, position: 'GK', isStarter: true },
+        { team: teams[3], playerName: 'Jadon Sancho', playerNum: 25, position: 'FW', isStarter: false },
+        { team: teams[3], playerName: 'Aaron Wan-Bissaka', playerNum: 29, position: 'DF', isStarter: true },
+
     ];
 
     const players = await Player.create(playerData);
@@ -76,7 +127,7 @@ const data = require('./data');
             comments: [{ content: 'Chelsea is the best!!!', motm: '' }]
         },
         {
-            matchTitle: 'CHEvMUN', homeTeam: teams[1]._id, awayTeam: teams[3]._id, homeScore: 3, awayScore: 3, date: '2023-12-12T16:30', stadium: 'Old Trafford', competition: 'English Premier League',
+            matchTitle: 'CHEvMUN', homeTeam: teams[1]._id, awayTeam: teams[2]._id, homeScore: 3, awayScore: 3, date: '2023-12-12T16:30', stadium: 'Old Trafford', competition: 'English Premier League',
             comments: [{ content: 'Good Game!!!', motm: '' }]
         }
     ];
