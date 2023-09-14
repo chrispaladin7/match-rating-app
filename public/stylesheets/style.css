@@ -34,8 +34,10 @@ body>main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #348C31;
-  padding: 20px;
+  /* background-color: #348C31; */
+  background-image: url('../images/Soccer-rating-background.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
   overflow-y: scroll;
 }
 
@@ -230,4 +232,94 @@ input{
 form{
   align-content: center;
   align-items: center;
+}
+
+/* Hero section styles */
+#hero {
+  text-align: center;
+  padding: 25px 0;
+  background-image: url('soccer-image.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+#hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+#hero h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#hero p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e55400;
+}
+
+#features {
+  text-align: center;
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+#features h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.feature {
+  margin-bottom: 40px;
+}
+
+.feature i {
+  font-size: 48px;
+  color: #ff6600;
+  margin-bottom: 10px;
+}
+
+.feature h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#about {
+  text-align: center;
+  padding: 60px 0;
+}
+
+#about h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#contact {
+  text-align: center;
+  padding: 60px 0;
+}
+
+#contact h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#contact p {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
