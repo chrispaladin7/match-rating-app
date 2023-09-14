@@ -4,7 +4,6 @@ module.exports = {
     create,
     delete: deleteReviews,
     update,
-    // edit
 }
 
 async function create(req, res) {
@@ -16,7 +15,7 @@ async function create(req, res) {
     // Pushes subdocs into Mongoose Match>review
     match.reviews.push(req.body);
     try {
-        // Save any changes made to the movie doc
+        // Save any changes made to the Match doc
         await match.save();
     } catch (error) {
         console.log(error);
@@ -27,7 +26,7 @@ async function create(req, res) {
 async function deleteReviews(req, res) {
     const match = await Match.findOne({ 'reviews._id': req.params.id, 'reviews.user': req.user.id });
     // Guard for unauthorized Users
-    if (!match) return res.redirect('/matches'); 
+    if (!match) return res.redirect('/matches');
     // Remove the review using Id 
     match.reviews.remove(req.params.id);
     // Save the action to Match>reviews document
@@ -39,8 +38,8 @@ async function deleteReviews(req, res) {
 async function update(req, res) {
     console.log(req.body)
     const match = await Match.findOne(
-        { 'reviews._id': req.params.id});
-    // Add the user-centric info to match reviews req.bodyß
+        { 'reviews._id': req.params.id });
+    // Add the user-centric info to match reviews req.body
     const reviewsSubdoc = match.reviews.id(req.params.id);
     if (!reviewsSubdoc.user.equals(req.user._id)) return res.redirect(`/matches/${match._id}`);
     // Update the text of the comment
@@ -50,6 +49,5 @@ async function update(req, res) {
     } catch (e) {
         console.log(e.message);
     }
-    // Redirect back to the book's show view
     res.redirect(`/matches/${match._id}`);
 }

@@ -57,53 +57,53 @@
         <tbody>
             <td>
                 <ul>
-                    <%- matches.homeStarters.map(p=>
-                        `<li>
-                            <article class="player-card">
-                                <h2> ${p.playerName} </h2>
-                                <p> <small>Position : </small>${p.position} </p>
-                                <p> <small>Squad No. : </small>${p.playerNum} </p>
-                            </article>
-                        </li>`
+                        <%- matches.homeStarters.map(p=>
+                            `<li>
+                                <article class="player-card">
+                                    <h2> ${p.playerName} </h2>
+                                    <p> <small>Position : </small>${p.position} </p>
+                                    <p> <small>Squad No. : </small>${p.playerNum} </p>
+                                </article>
+                            </li>`
                         ).sort().join('') %>
                 </ul>
             </td>
             <td>
                 <ul>
-                    <%- matches.awayStarters.map(p=>
-                        `<li>
-                            <article class="player-card">
-                                <h2> ${p.playerName} </h2>
-                                <p> <small>Position : </small>${p.position} </p>
-                                <p> <small>Squad No. : </small>${p.playerNum} </p>
-                            </article>
-                        </li>`
+                        <%- matches.awayStarters.map(p=>
+                            `<li>
+                                <article class="player-card">
+                                    <h2> ${p.playerName} </h2>
+                                    <p> <small>Position : </small>${p.position} </p>
+                                    <p> <small>Squad No. : </small>${p.playerNum} </p>
+                                </article>
+                            </li>`
                         ).sort().join('') %>
                 </ul>
             </td>
             <td>
                 <ul>
-                    <%- matches.homeSubs.map(p=>
-                        `<li>
-                            <article class="player-card">
-                                <h2> ${p.playerName} </h2>
-                                <p> <small>Position : </small>${p.position} </p>
-                                <p> <small>Squad No. : </small>${p.playerNum} </p>
-                            </article>
-                        </li>`
+                        <%- matches.homeSubs.map(p=>
+                            `<li>
+                                <article class="player-card">
+                                    <h2> ${p.playerName} </h2>
+                                    <p> <small>Position : </small>${p.position} </p>
+                                    <p> <small>Squad No. : </small>${p.playerNum} </p>
+                                </article>
+                            </li>`
                         ).sort().join('') %>
                 </ul>
             </td>
             <td>
                 <ul>
-                    <%- matches.awaySubs.map(p=>
-                        `<li>
-                            <article class="player-card">
-                                <h2> ${p.playerName} </h2>
-                                <p> <small>Position : </small>${p.position} </p>
-                                <p> <small>Squad No. : </small>${p.playerNum} </p>
-                            </article>
-                        </li>`
+                        <%- matches.awaySubs.map(p=>
+                            `<li>
+                                <article class="player-card">
+                                    <h2> ${p.playerName} </h2>
+                                    <p> <small>Position : </small>${p.position} </p>
+                                    <p> <small>Squad No. : </small>${p.playerNum} </p>
+                                </article>
+                            </li>`
                         ).sort().join('') %>
                 </ul>
             </td>
@@ -111,7 +111,8 @@
     </table>
 
     <section>
-        <h2>Include your take on the Match below<br> <br> Number of comments:<%= matches.reviews.length %></h2>
+        <h2>Include your take on the Match below<br> <br> Number of comments:<%= matches.reviews.length %>
+        </h2>
         <form id="add-review-form" method="POST" action="/matches/<%= matches._id %>/reviews">
             <label>Review:</label>
             <textarea class="review-textarea" name="content"></textarea>
@@ -165,15 +166,14 @@
                                         <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
                                             <button type="submit">X</button>
                                         </form>
-                                        <% } %>
-                                </td>
+                            <% } %>
+                        </td>
                     </tr>
-                    <% }); %>
+                <% }); %>
             </tbody>
         </table>
         <% } else { %>
             <h5>No Reviews Yet</h5>
             <% } %>
 
-
-                <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>

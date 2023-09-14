@@ -1,5 +1,3 @@
-// seed.js (a utility to seed/initialize the database)
-
 require('dotenv').config();
 require('./config/database');
 
@@ -9,13 +7,10 @@ const Player = require('./models/player');
 
 const data = require('./data');
 
-
-
 (async function () {
     await Match.deleteMany({});
     await Team.deleteMany({});
     await Player.deleteMany({});
-
 
     const teams = await Team.create(data.teams);
 
@@ -186,12 +181,11 @@ const data = require('./data');
         await m.save();
     }
 
-
     for (let t of teams) {
         t.players = players.filter(p => p.team.equals(t._id));
         await t.save();
     }
-    console.log('Created teams:', teams);
+    
     process.exit();
 })();
 

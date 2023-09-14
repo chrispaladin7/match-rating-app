@@ -3,7 +3,7 @@ var router = express.Router();
 const passport = require('passport');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('index', { title: 'Match Rater' });
 });
 
@@ -34,8 +34,8 @@ router.get('/oauth2callback', function (req, res, next) {
 });
 
 // OAuth logout route
-router.get('/logout', function(req, res){
-  req.logout(function() {
+router.get('/logout', function (req, res) {
+  req.logout(function () {
     res.redirect('/');
   });
 });

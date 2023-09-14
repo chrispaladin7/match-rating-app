@@ -4,7 +4,6 @@ module.exports = {
     index
 };
 
-
 async function index(req, res) {
-    res.render('ratings/index', { title : 'Player Rating' })
+    res.render('ratings/index', { title : 'Player Rating' });
 }

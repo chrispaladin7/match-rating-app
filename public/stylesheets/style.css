@@ -29,7 +29,6 @@ nav>img {
   margin-right: auto;
 }
 
-
 body>main {
   grid-area: main;
   display: flex;
@@ -261,7 +260,6 @@ form {
   align-items: center;
 }
 
-
 #hero {
   text-align: center;
   padding: 25px 0;
@@ -319,7 +317,6 @@ form {
 #features {
   text-align: center;
   padding: 60px 0;
-  /* background-color: brown; */
   height: 100%;
   color: blue;
 }
@@ -343,7 +340,6 @@ form {
 .feature h3{
   font-size: 24px;
   margin-bottom: 10px;
-  /* rogue */
   color: blue;
 }
 
@@ -367,7 +363,6 @@ form {
   margin-bottom: 20px;
   color: blue;
 }
-
 
 .player-card {
   margin: 0.5rem;

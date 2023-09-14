@@ -17,13 +17,19 @@
             </thead>
             <tbody>
                 <td>
-                    <strong><%= m.homeScore %></strong>  <small><%= m.matchTitle %></small>  <strong><%= m.awayScore %></strong>
+                    <strong>
+                        <%= m.homeScore %>
+                    </strong> <small>
+                        <%= m.matchTitle %>
+                    </small> <strong>
+                        <%= m.awayScore %>
+                    </strong>
                 </td>
                 <td>
-                    <%= m.homeTeam.name %> (<%= m.homeTeam.abbreviation %>)  
+                    <%= m.homeTeam.name %> (<%= m.homeTeam.abbreviation %>)
                 </td>
                 <td>
-                    <%= m.awayTeam.name %> (<%= m.awayTeam.abbreviation %>)  
+                    <%= m.awayTeam.name %> (<%= m.awayTeam.abbreviation %>)
                 </td>
                 <td>
                     <%= m.date.toLocaleDateString() %>
@@ -44,6 +50,4 @@
             </tbody>
     </table>
 
-
-
-    <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>

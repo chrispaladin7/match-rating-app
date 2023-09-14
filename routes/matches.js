@@ -3,7 +3,6 @@ var router = express.Router();
 var matchesCtrl = require('../controllers/matches');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
-
 //GET /matches
 router.get('/', matchesCtrl.index);
 

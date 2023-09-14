@@ -3,7 +3,6 @@ var router = express.Router();
 var teamsCtrl = require('../controllers/teams');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
-
 //GET /teams
 router.get('/', teamsCtrl.index);
 

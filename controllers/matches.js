@@ -5,8 +5,6 @@ module.exports = {
     show
 };
 
-
-
 async function index(req, res) {
     const matches = await Match.find({})
         .populate('homeTeam')
@@ -16,8 +14,7 @@ async function index(req, res) {
 
 async function show(req, res) {
     const matches = await Match.findById(req.params.id)
-    .populate('homeTeam')
-    .populate('awayTeam')
-// res.render('matches/index', { title: 'All Matches', matches });
-res.render('matches/show', { title: `${matches.matchTitle} Details`, matches });
+        .populate('homeTeam')
+        .populate('awayTeam')
+    res.render('matches/show', { title: `${matches.matchTitle} Details`, matches });
 }

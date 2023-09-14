@@ -22,7 +22,7 @@ const teamsSchema = new Schema({
     stadium: String,
     league: String,
     logo: String,
-    players:[playerSchema]
+    players: [playerSchema]
 }, {
     timestamps: true
 });

@@ -9,11 +9,7 @@ router.post('/matches/:id/reviews',ensureLoggedIn,reviewsCtrl.create);
 //PUT /reviews/:id
 router.put('/reviews/:id',ensureLoggedIn,reviewsCtrl.update);
 
-// Delete /reviews
+//DELETE /reviews
 router.delete('/reviews/:id',ensureLoggedIn,reviewsCtrl.delete);
-
-//GET /reviews/:id/edit
-// router.get('',reviewsCtrl.edit)
-
 
 module.exports = router;
