@@ -34,4 +34,27 @@
         </tbody>
     </table>
 
+    <table id="list">
+        <thead>
+            <tr>
+                <th>Player Name</th>
+                <th>Team Number</th>
+                <th>Preferred Position</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <%= teams.playerName %>
+                </td>
+                <td>
+                    <%= teams.playerNum %>
+                </td>
+                <td>
+                    <%= teams.position %>
+                </td>
+        </tbody>
+    </table>
+
     <%- include('../partials/footer') %>

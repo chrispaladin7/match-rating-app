@@ -18,7 +18,6 @@ async function show(req, res) {
     const matches = await Match.findById(req.params.id)
     .populate('homeTeam')
     .populate('awayTeam')
-    const action = ""
 // res.render('matches/index', { title: 'All Matches', matches });
-res.render('matches/show', { title: `${matches.matchTitle} Details`, matches ,action});
+res.render('matches/show', { title: `${matches.matchTitle} Details`, matches });
 }

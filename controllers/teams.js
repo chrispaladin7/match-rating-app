@@ -12,6 +12,7 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    const teams = await Team.findById(req.params.id);
+    const teams = await Team.findById(req.params.id)
+    .populate('players')
     res.render('teams/show', { title: `${teams.name} Team Details`, teams });
 }

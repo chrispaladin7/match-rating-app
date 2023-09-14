@@ -191,12 +191,22 @@ const data = require('./data');
         await m.save();
     }
 
-    console.log('Created matches:', matches);
+    // for (let t of teams){
+    //     t.players = players.filter(p => p.team._id.equals(t._id));
+    //     await t.save();
+    // }
+
+    for (let t of teams) {
+        t.players = players.filter(p => p.team.equals(t._id));
+        await t.save();
+    }
+
+    // console.log('Created matches:', matches);
     console.log('Created teams:', teams);
-    console.log('Created home players:', matches[0].homeStarters);
-    console.log('Created home subs:', matches[0].homeSubs);
-    console.log('Created away players:', matches[0].awayStarters);
-    console.log('Created away subs:', matches[0].awaySubs);
+    // console.log('Created home players:', matches[0].homeStarters);
+    // console.log('Created home subs:', matches[0].homeSubs);
+    // console.log('Created away players:', matches[0].awayStarters);
+    // console.log('Created away subs:', matches[0].awaySubs);
 
     process.exit();
 })();

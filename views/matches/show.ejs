@@ -8,8 +8,8 @@
         <thead>
             <tr>
                 <th>Match</th>
-                <th>Home Name</th>
-                <th>Away Name</th>
+                <th>Home Team</th>
+                <th>Away Team</th>
                 <th>Score</th>
                 <th>Date</th>
                 <th>Time</th>
@@ -99,7 +99,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>User</th>
+                    <th></th>
                     <th>Date</th>
                     <th>Time</th>
                     <th>Review</th>
@@ -109,7 +109,8 @@
                 <% matches.reviews.forEach(function(r) { %>
                     <tr>
                         <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>"
-                                referrerpolicy="no-referrer">
+                                referrerpolicy="no-referrer"> </td>
+                        <td>
                             <%= r.userName %>
                         </td>
                         <td>
@@ -119,33 +120,29 @@
                             <%= r.createdAt.toLocaleTimeString() %>
                         </td>
                         <td>
-
-                        </td>
-                        <td>
                             <!-- update reviews -->
                             <% if (user?._id.equals(r.user)) { %>
-                                    <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
-                                        <textarea class="review-textarea-update" name="content" cols="15" rows="5">
+                                <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
+                                    <textarea class="review-textarea-update" name="content" cols="15" rows="5">
                                     <%= r.content %>
                                     </textarea>
-                                        <input type="submit" value="UPDATE" class="update-review-button">
-                                    </form>
-                                    
-                                    <% } else {%>
-                                        <textarea class="review-textarea-update" name="content" cols="15" rows="5"
-                                            disabled="true">
+                        <td> <input type="submit" value="UPDATE" class="update-review-button"> </td>
+                        </form>
+
+                        <% } else {%>
+                            <textarea class="review-textarea-update" name="content" cols="15" rows="5" disabled="true">
                                         <%= r.content %>
                                         </textarea>
                             <% } %>
-                        </td>
-                        <td>
-                            <!-- delete reviews -->
-                            <% if (user?._id.equals(r.user)) { %>
-                                <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                                    <button type="submit">X</button>
-                                </form>
-                                <% } %>
-                        </td>
+                                </td>
+                                <td>
+                                    <!-- delete reviews -->
+                                    <% if (user?._id.equals(r.user)) { %>
+                                        <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                                            <button type="submit">X</button>
+                                        </form>
+                                 <% } %>
+                                </td>
                     </tr>
                     <% }); %>
             </tbody>
@@ -155,4 +152,4 @@
             <% } %>
 
 
-                <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>
