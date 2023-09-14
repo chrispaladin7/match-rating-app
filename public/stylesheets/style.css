@@ -10,8 +10,8 @@ body {
   display: grid;
   grid-template-rows: 50px 1fr;
   grid-template-areas:
-  "nav"
-  "main"
+    "nav"
+    "main"
 }
 
 body>nav {
@@ -29,12 +29,12 @@ nav>img {
   margin-right: auto;
 }
 
+
 body>main {
   grid-area: main;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: #348C31; */
   background-image: url('../images/Soccer-rating-background.png');
   background-repeat: no-repeat;
   background-size: 100%;
@@ -83,21 +83,31 @@ nav>a.active {
   margin-left: auto;
 }
 
+section>h2,
+label {
+  color: wheat;
+  text-shadow: black 1px 1px;
+}
+
 table {
-  font-size: 20px;
-  color: #ffffff;
+  font-size: 22px;
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+  font-weight: bold;
 }
 
 table thead th {
   padding: 5px;
   border-bottom: 2px solid #424748;
-  color: #ffffff;
+  color: #fff;
 }
 
 table td {
   padding: 10px;
   text-align: center;
-  color: #ffffff;
+  color: black;
+  text-shadow: none;
+  text-shadow: 1px 1px 2px gold, 0 0 1em black, 0 0 0.2em whitesmoke;
 }
 
 #list td:nth-child(2),
@@ -145,25 +155,6 @@ hr {
   color: #424748
 }
 
-#badge-container {
-  display: flex;
-  flex-wrap: wrap;
-  /* padding: 1rem; */
-  width: 80%;
-  border: 2px solid #B8C0C2;
-  border-radius: .5rem;
-  margin: .5rem 0 2rem;
-}
-
-.badge {
-  background-color: #B8C0C2;
-  padding: .5rem;
-  margin: .5rem;
-  border-radius: .3rem;
-  font-size: .8rem;
-  text-align: center;
-}
-
 #show-page ul {
   margin: 0 0 2rem;
   padding: 0;
@@ -207,55 +198,107 @@ li {
   text-decoration: none;
 }
 
-.review-textarea{
+.review-textarea {
+  color: #424748;
+  font-size: medium;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.review-textarea-update {
   color: #424748;
   font-size: medium;
   text-align: center;
   border-radius: 5px;
 }
 
-.review-textarea-update{
+.review-textarea-update :disabled {
   color: #424748;
   font-size: medium;
   text-align: center;
+  background-color: #FC0 !important;
   border-radius: 5px;
 }
 
-button{
+button {
   color: black;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #a41717;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-input{
+.update-review-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3a70a7;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+input {
   color: #424748;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #29d261;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-form{
+form {
   align-content: center;
   align-items: center;
 }
 
-/* Hero section styles */
+
 #hero {
   text-align: center;
   padding: 25px 0;
-  background-image: url('soccer-image.jpg');
+  /* background-image: url('soccer-image.jpg'); */
   background-size: cover;
   background-position: center;
-  color: #fff;
+  color: #424748;
+  /* color: #fff; */
 }
 
 #hero h1 {
   font-size: 36px;
   margin-bottom: 20px;
+  color: blue;
 }
+
 #hero h2 {
   font-size: 36px;
   margin-bottom: 20px;
+  color: blue;
 }
 
 #hero p {
   font-size: 18px;
   margin-bottom: 40px;
+  color: blue;
+}
+
+.content-wrapper {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  background-color: rgba(204, 204, 204, 0.5);
 }
 
 .cta-button {
@@ -276,16 +319,19 @@ form{
 #features {
   text-align: center;
   padding: 60px 0;
-  background-color: #fff;
+  /* background-color: brown; */
+  height: 100%;
+  color: blue;
 }
 
-#features h2 {
+#features>h2 {
   font-size: 32px;
   margin-bottom: 40px;
 }
 
 .feature {
   margin-bottom: 40px;
+
 }
 
 .feature i {
@@ -294,9 +340,15 @@ form{
   margin-bottom: 10px;
 }
 
-.feature h3 {
+.feature h3{
   font-size: 24px;
   margin-bottom: 10px;
+  /* rogue */
+  color: blue;
+}
+
+.feature p{
+  color: #fff;
 }
 
 #about {
@@ -304,22 +356,35 @@ form{
   padding: 60px 0;
 }
 
-#about h2 {
+#about h2{
   font-size: 32px;
   margin-bottom: 20px;
+  color: blue;
 }
 
-#contact {
-  text-align: center;
-  padding: 60px 0;
-}
-
-#contact h2 {
+#about p{
   font-size: 32px;
   margin-bottom: 20px;
+  color: blue;
 }
 
-#contact p {
-  font-size: 18px;
-  margin-bottom: 20px;
+
+.player-card {
+  margin: 0.5rem;
+  padding: 0.3rem;
+  font-size: 1.2rem;
+
+}
+
+.player-card {
+  background: rgb(63, 94, 251);
+  background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(6, 24, 13, 1) 100%);
+  text-shadow: #FC0 1px 0 10px;
+  border-radius: 5%;
+}
+
+.player-card>h2,
+.player-card>p {
+  margin: 0.2rem;
+  font-size: 1rem;
 }

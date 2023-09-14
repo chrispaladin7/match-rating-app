@@ -51,7 +51,6 @@ const data = require('./data');
         { team: teams[1], playerName: 'Enzo Fernández', playerNum: 8, position: 'MF', isStarter: true },
         { team: teams[1], playerName: 'Mykhaylo Mudryk', playerNum: 10, position: 'MF', isStarter: false },
         { team: teams[1], playerName: 'Noni Madueke', playerNum: 11, position: 'MF', isStarter: false },
-        { team: teams[1], playerName: 'Marcus Bettinelli', playerNum: 13, position: 'GK', isStarter: false },
         { team: teams[1], playerName: 'Nicolas Jackson', playerNum: 15, position: 'FW', isStarter: true },
         { team: teams[1], playerName: 'Lesley Ugochukwu', playerNum: 16, position: 'MF', isStarter: false },
         { team: teams[1], playerName: 'Carney Chukwuemeka', playerNum: 17, position: 'MF', isStarter: true },
@@ -65,7 +64,6 @@ const data = require('./data');
         { team: teams[1], playerName: 'Malo Gusto', playerNum: 27, position: 'DF', isStarter: false },
         { team: teams[1], playerName: 'Đorđe Petrović', playerNum: 28, position: 'GK', isStarter: false },
         { team: teams[1], playerName: 'Ian Maatsen', playerNum: 29, position: 'DF', isStarter: false },
-        { team: teams[1], playerName: 'Wesley Fofana', playerNum: 33, position: 'DF', isStarter: false },
 
         //Manchester United Team
         { team: teams[2], playerName: 'Altay Bayındır', playerNum: 1, position: 'GK', isStarter: false },
@@ -79,14 +77,11 @@ const data = require('./data');
         { team: teams[2], playerName: 'Rasmus Højlund', playerNum: 11, position: 'FW', isStarter: true },
         { team: teams[2], playerName: 'Tyrell Malacia', playerNum: 12, position: 'DF', isStarter: false },
         { team: teams[2], playerName: 'Christian Eriksen', playerNum: 14, position: 'MF', isStarter: false },
-        { team: teams[2], playerName: 'Reguilón', playerNum: 15, position: 'DF', isStarter: false },
-        { team: teams[2], playerName: 'Amad', playerNum: 16, position: 'FW', isStarter: false },
         { team: teams[2], playerName: 'Alejandro Garnacho', playerNum: 17, position: 'FW', isStarter: false },
         { team: teams[2], playerName: 'Casemiro', playerNum: 18, position: 'MF', isStarter: true },
         { team: teams[2], playerName: 'Raphaël Varane', playerNum: 19, position: 'DF', isStarter: true },
         { team: teams[2], playerName: 'Diogo Dalot', playerNum: 20, position: 'DF', isStarter: false },
         { team: teams[2], playerName: 'Antony', playerNum: 21, position: 'MF', isStarter: true },
-        { team: teams[2], playerName: 'Tom Heaton', playerNum: 22, position: 'GK', isStarter: false },
         { team: teams[2], playerName: 'Luke Shaw', playerNum: 23, position: 'DF', isStarter: true },
         { team: teams[2], playerName: 'André Onana', playerNum: 24, position: 'GK', isStarter: true },
         { team: teams[2], playerName: 'Jadon Sancho', playerNum: 25, position: 'FW', isStarter: false },
@@ -191,23 +186,12 @@ const data = require('./data');
         await m.save();
     }
 
-    // for (let t of teams){
-    //     t.players = players.filter(p => p.team._id.equals(t._id));
-    //     await t.save();
-    // }
 
     for (let t of teams) {
         t.players = players.filter(p => p.team.equals(t._id));
         await t.save();
     }
-
-    // console.log('Created matches:', matches);
     console.log('Created teams:', teams);
-    // console.log('Created home players:', matches[0].homeStarters);
-    // console.log('Created home subs:', matches[0].homeSubs);
-    // console.log('Created away players:', matches[0].awayStarters);
-    // console.log('Created away subs:', matches[0].awaySubs);
-
     process.exit();
 })();
 
