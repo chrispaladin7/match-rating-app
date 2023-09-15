@@ -29,7 +29,7 @@ Soccer Ratings & Match Review is your go-to web app for taking your soccer passi
 - Ejs
 - Node.js
 - Express.js
-- Moongoose/Mongodb
+- Mongoose/Mongodb
 - Google OAuth
 
 
