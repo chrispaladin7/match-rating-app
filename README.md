@@ -40,6 +40,11 @@ Soccer Ratings & Match Review is your go-to web app for taking your soccer passi
 	https://match-rating-app-83ee0222bafd.herokuapp.com/
 </details>
 
+<details>
+  <summary>Trello Link</summary>
+	https://trello.com/b/I0rvxYl2/soccer-match-rater
+</details>
+
 # Next Steps
 
 - Adding functionality to for users rate player performances after a match for 1-10.
