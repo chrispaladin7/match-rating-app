@@ -263,11 +263,9 @@ form {
 #hero {
   text-align: center;
   padding: 25px 0;
-  /* background-image: url('soccer-image.jpg'); */
   background-size: cover;
   background-position: center;
   color: #424748;
-  /* color: #fff; */
 }
 
 #hero h1 {
@@ -296,7 +294,7 @@ form {
   align-items: center;
   text-align: center;
   width: 80%;
-  background-color: rgba(204, 204, 204, 0.5);
+  background-color: rgba(140, 181, 209, 0.5);
 }
 
 .cta-button {
@@ -345,23 +343,6 @@ form {
 
 .feature p{
   color: #fff;
-}
-
-#about {
-  text-align: center;
-  padding: 60px 0;
-}
-
-#about h2{
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: blue;
-}
-
-#about p{
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: blue;
 }
 
 .player-card {
